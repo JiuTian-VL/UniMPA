@@ -76,43 +76,6 @@ intended transition to executable action.
 <img src="asserts/1-introv4.png" width="95%">
 </div>
 
-## :gear: Method
-
-The overall framework of **UniMPA** couples future-supervised transition modeling,
-bidirectional visual–action memory, and action generation through a single
-action-grounded transition interface.
-
-<div align="center">
-<img src="asserts/3-frameworkv4.png" width="100%">
-</div>
-
-1. **World Expert.** Zero-initialized transition queries are transported into latent
-   transition tokens conditioned on the current context. Training-only latent and
-   trigger-gated pixel heads supervise these tokens with future outcomes, adding
-   interaction-time detail without dense-reconstruction bias.
-2. **Bidirectional retrieval.** The transition representation queries the Visual-Action
-   Memory Bank for action-grounded visual experience, while historical actions query the
-   Action-Visual Memory Bank to construct executable action prototypes.
-3. **Action generation.** The retrieved prior biases the initial flow distribution, which
-   the Action Expert then refines for the current observation, instruction, and robot state.
-4. **Inference.** Only the explicit latent and pixel decoding heads are removed. The World
-   Expert and its transition tokens remain active and, together with the retrieved
-   action-manifold prior, condition action generation.
-
-Stateful Vision-Mamba and Action-Mamba modules encode episode-level temporal
-correspondence, while cross-stream transition grounding injects action-conditioned
-dynamics into visual memories and visual-transition semantics into action memories.
-
-<div align="center">
-<img src="asserts/3-bankv3.png" width="100%">
-</div>
-
-Training follows a two-stage recipe. In **Stage 1**, the bidirectional memory bank is
-pretrained with future-oriented reconstruction, retrieval-simulation, and cross-modal
-alignment objectives, so that keys index transitions and values preserve temporally
-evolved vision–action dynamics. In **Stage 2**, the memory banks are frozen, and
-persistent latent prediction, trigger-gated pixel prediction, and flow-matching action
-generation are jointly optimized on top of the $\pi_{0.5}$ backbone.
 
 ## :bar_chart: Results
 
@@ -134,67 +97,7 @@ generalization, semantic understanding, and long-horizon real-world manipulation
   (+12.6/+11.5 over $\pi_{0.5}$), with the largest gains on long-horizon composition and
   recovery (+20.0/+14.9).
 
-Gains are most pronounced on transition-critical settings: long-horizon composition,
-dynamic and reactive interaction, and recovery after failure, where the robot must keep
-execution phase-consistent and adapt executable experience to a changing scene.
 
-<div align="center">
-<img src="asserts/5-vis-real.png" width="100%">
-</div>
-
-## :movie_camera: Videos
-
-Real-world rollouts on the seven manipulation suites will be released here.
-
-<!-- To add a clip: drag the .mp4 into a GitHub issue/comment, then replace the
-     corresponding placeholder line with:
-     <video src="https://github.com/user-attachments/assets/XXXXXXXX" controls muted width="100%"></video> -->
-
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Semantic Rearrangement &amp; Sorting</b>
-    </td>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Articulated &amp; Container Interaction</b>
-    </td>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Precision Assembly &amp; Geometric Manipulation</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Deformable &amp; Tool-Mediated Manipulation</b>
-    </td>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Bimanual Coordination</b>
-    </td>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Dynamic &amp; Reactive Manipulation</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <i>coming soon</i>
-      <br>
-      <b>Long-Horizon Composition &amp; Recovery</b>
-    </td>
-    <td align="center" width="33%"></td>
-    <td align="center" width="33%"></td>
-  </tr>
-</table>
 
 ## :open_file_folder: Code Release
 
@@ -204,9 +107,7 @@ Please stay tuned.
 - [ ] Training code
 - [ ] Evaluation code
 - [ ] Pretrained checkpoints
-- [ ] Memory bank pretraining scripts
-- [ ] Real-world rollout videos
-- [ ] Simulation benchmark scripts
+
 
 ## :memo: Citation
 
