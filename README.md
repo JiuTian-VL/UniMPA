@@ -24,7 +24,7 @@ via Action-Grounded Transition Modeling
 <a href="https://arxiv.org/abs/XXXX.XXXXX">
     <img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg?logo=arxiv" alt="arXiv">
 </a>
-<a href="https://liwei-2013.github.io/UniMPA-page/">
+<a href="https://jiutian-vl.github.io/UniMPA-page/">
     <img src="https://img.shields.io/badge/Project-Page-1f8acb.svg?logo=github" alt="Project Page">
 </a>
 
