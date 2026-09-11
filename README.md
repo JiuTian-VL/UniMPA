@@ -21,8 +21,8 @@ via Action-Grounded Transition Modeling
 
 *Corresponding author<br>
 
-<a href="https://arxiv.org/abs/XXXX.XXXXX">
-    <img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg?logo=arxiv" alt="arXiv">
+<a href="https://arxiv.org/abs/2609.11875">
+    <img src="https://img.shields.io/badge/arXiv-2609.11875-b31b1b.svg?logo=arxiv" alt="arXiv">
 </a>
 <a href="https://jiutian-vl.github.io/UniMPA-page/">
     <img src="https://img.shields.io/badge/Project-Page-1f8acb.svg?logo=github" alt="Project Page">
@@ -120,7 +120,7 @@ If you find this work useful for your research, please kindly cite our paper:
 @article{li2026unimpa,
   title={UniMPA: A Unified Memory-Prediction-Action Model via Action-Grounded Transition Modeling},
   author={Li, Wei and Shao, Rui and He, Jie and Zhang, Lingsen and Liu, Ziwei and Nie, Liqiang},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  journal={arXiv preprint arXiv:2609.11875},
   year={2026}
 }
 ```
